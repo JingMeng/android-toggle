@@ -1,27 +1,37 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    namespace 'com.github.angads25.toggledemo'
+    compileSdk 34
     defaultConfig {
         applicationId "com.github.angads25.toggledemo"
-        minSdkVersion 14
-        targetSdkVersion 27
+        minSdk 14
+        targetSdk 34
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    
     }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.github.angads25:toggle:1.0.0'
-    implementation 'com.android.support:appcompat-v7:27.0.2'
+    implementation project(':toggle')
+    implementation 'androidx.appcompat:appcompat:1.2.0'
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
 }
+
+
+
+

@@ -25,10 +25,15 @@ ext {
 }
 
 android {
-    compileSdkVersion 27
+    namespace 'com.github.angads25.toggle'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    compileSdk 34
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 27
+        minSdk 14
+        targetSdk 34
         versionCode 1
         versionName "1.0.0"
     }
@@ -37,6 +42,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    
     }
 }
 
@@ -44,5 +50,4 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 }
 
-apply from: 'https://raw.githubusercontent.com/angads25/JCenter/master/installv1.gradle'
-apply from: 'https://raw.githubusercontent.com/angads25/JCenter/master/bintrayv1.gradle'
+

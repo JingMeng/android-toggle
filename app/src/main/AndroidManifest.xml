@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.github.angads25.toggledemo">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -10,7 +9,7 @@
         android:icon="@mipmap/ic_launcher"
         android:name=".ToggleDemoApplication"
         android:roundIcon="@mipmap/ic_launcher_round">
-        <activity android:name="com.github.angads25.toggledemo.MainActivity">
+        <activity android:name="com.github.angads25.toggledemo.MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -19,7 +18,7 @@
         <activity
             android:label="Labeled Switch"
             android:name=".LabeledSwitchActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" android:exported="false"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
